@@ -1,18 +1,19 @@
 import 'package:honey_island/users/user.dart';
+import 'package:honey_island/users/user_entity.dart';
 import 'package:honey_island/users/user_repository.dart';
 
 class UserStore implements UserRepository {
   const UserStore();
 
   @override
-  Future<List<User>> getUsers() {
+  Future<List<UserEntity>> getUsers() {
     return Future.value([
-      User(id: '1', name: 'Felipe'),
-      User(id: '2', name: 'Aninha'),
-      User(id: '3', name: 'Mineiro'),
-      User(id: '4', name: 'Sandri'),
-      User(id: '5', name: 'Luan'),
-      User(id: '6', name: 'Fer')
+      UserEntity(id: '1', name: 'Felipe'),
+      UserEntity(id: '2', name: 'Aninha'),
+      UserEntity(id: '3', name: 'Mineiro'),
+      UserEntity(id: '4', name: 'Sandri'),
+      UserEntity(id: '5', name: 'Luan'),
+      UserEntity(id: '6', name: 'Fer')
     ]);
   }
 }

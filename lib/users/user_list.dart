@@ -2,6 +2,7 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:honey_island/users/user.dart';
+import 'package:honey_island/users/user_entity.dart';
 import 'package:honey_island/users/user_repository.dart';
 
 class UserList extends ChangeNotifier {
@@ -24,9 +25,9 @@ class UserList extends ChangeNotifier {
       _isLoading = true;
       notifyListeners();
 
-      final List<User> fetchedUsers = await repository.getUsers();
+      final List<UserEntity> fetchedUsers = await repository.getUsers();
       _users.clear();
-      _users.addAll(fetchedUsers);
+      _users.addAll(fetchedUsers.map((userEntity) => User.fromEntity(userEntity)));
     } finally {
       _isLoading = false;
       notifyListeners();  

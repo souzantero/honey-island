@@ -27,8 +27,13 @@ class App extends StatelessWidget {
         ChangeNotifierProvider<UserList>(
           create: (_) => UserList(repository: userRepository),
         ),
-        ChangeNotifierProvider<ExpenseList>(
+        ChangeNotifierProxyProvider<UserList, ExpenseList>(
           create: (_) => ExpenseList(repository: expenseRepository),
+          update: (_, userList, expenseList) {
+            if (expenseList == null) throw ArgumentError.notNull('expenseList');
+            expenseList.userList = userList;
+            return expenseList;
+          }
         )
       ],
       child: MaterialApp(

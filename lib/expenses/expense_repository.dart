@@ -1,5 +1,5 @@
-import 'package:honey_island/expenses/expense.dart';
+import 'package:honey_island/expenses/expense_entity.dart';
 
 abstract class ExpenseRepository {
-  Future<List<Expense>> getExpenses();
+  Future<List<ExpenseEntity>> getExpenses();
 }
