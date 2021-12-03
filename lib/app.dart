@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:honey_island/expenses/add_expense_page.dart';
+import 'package:honey_island/expenses/expense_analysis_page.dart';
 import 'package:honey_island/expenses/expense_list.dart';
 import 'package:honey_island/expenses/expense_page.dart';
 import 'package:honey_island/expenses/expense_repository.dart';
@@ -47,6 +48,7 @@ class App extends StatelessWidget {
           '/users': (context) => const UserPage(),
           '/expenses': (context) => const ExpensePage(),
           '/expenses/add': (context) => const AddExpensePage(),
+          '/expenses/analysis': (context) => const ExpenseAnalysisPage(),
         },
       ),
     );

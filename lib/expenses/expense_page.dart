@@ -9,6 +9,14 @@ class ExpensePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expense'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.analytics_outlined),
+            onPressed: () {
+              Navigator.pushNamed(context, '/expenses/analysis');
+            },
+          ),
+        ],
       ),
       body: const ExpenseListView(),
     );

@@ -25,6 +25,8 @@ class ExpenseList extends ChangeNotifier {
 
   UnmodifiableListView<Expense> get expenses => UnmodifiableListView(_expenses);
 
+  double get totalAmount => _expenses.fold(0.0, (total, expense) => total + expense.amount);
+
   Future<void> _loadExpenses() async {
     try {
       _isLoading = true;
