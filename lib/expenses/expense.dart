@@ -7,24 +7,28 @@ class Expense {
   final double amount;
   final String description;
   final User paidBy;
+  final List<User> splitWith;
 
   Expense({
     required this.id,
     required this.description,
     required this.amount,
     required this.paidBy,
+    required this.splitWith,
   });
 
   factory Expense.create({
     required String description,
     required double amount,
     required User paidBy,
+    required List<User> splitWith,
   }) {
     return Expense(
       id: const Uuid().v4(),
       description: description,
       amount: amount,
       paidBy: paidBy,
+      splitWith: splitWith,
     );
   }
 

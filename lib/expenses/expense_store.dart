@@ -11,19 +11,22 @@ class ExpenseStore implements ExpenseRepository {
         id: '1',
         description: 'Mercado',
         amount: 100,
-        userId: '1',
+        payerId: '1',
+        splitterIds: ['2', '3'],
       ),
       ExpenseEntity(
         id: '2',
         description: 'Combustivel',
         amount: 80,
-        userId: '2',
+        payerId: '2',
+        splitterIds: ['1', '3'],
       ),
       ExpenseEntity(
         id: '3',
         description: 'Camping',
         amount: 120,
-        userId: '3',
+        payerId: '3',
+        splitterIds: ['1'],
       ),
     ]);
   }

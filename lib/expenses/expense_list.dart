@@ -37,7 +37,8 @@ class ExpenseList extends ChangeNotifier {
           id: expenseEntity.id,
           amount: expenseEntity.amount,
           description: expenseEntity.description,
-          paidBy: _userList.users.firstWhere((user) => user.id == expenseEntity.userId),
+          paidBy: _userList.users.firstWhere((user) => user.id == expenseEntity.payerId),
+          splitWith: _userList.users.where((user) => expenseEntity.splitterIds.contains(user.id)).toList(),
         );
       }));
     } finally {

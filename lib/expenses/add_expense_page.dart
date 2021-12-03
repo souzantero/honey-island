@@ -85,13 +85,13 @@ class _AddExpensePageState extends State<AddExpensePage> {
             final description = _descriptionEditingController.text;
             final amount = double.tryParse(_amountEditingController.text)!;
 
-            final expense = Expense.create(
-              paidBy: _paidBy,
-              description: description, 
-              amount: amount, 
-            );
+            // final expense = Expense.create(
+            //   paidBy: _paidBy,
+            //   description: description, 
+            //   amount: amount, 
+            // );
 
-            expenseList.addExpense(expense);
+            // expenseList.addExpense(expense);
 
             Navigator.pop(context);
           }

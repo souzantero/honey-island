@@ -7,17 +7,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final expenseList = context.watch<ExpenseList>();
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Honey Island'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.add),
-            onPressed: () => Navigator.pushNamed(context, '/expenses/add'),
-          ),
-        ],
+        // actions: [
+        //   IconButton(
+        //     icon: const Icon(Icons.add),
+        //     onPressed: () => Navigator.pushNamed(context, '/expenses/add'),
+        //   ),
+        // ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -29,23 +27,20 @@ class HomePage extends StatelessWidget {
               },
             ),
             ListTile(
+              title: const Text("Expenses"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pushNamed(context, '/expenses');
+              },
+            ),
+            ListTile(
               title: const Text("Users"),
               onTap: () {
+                Navigator.pop(context);
                 Navigator.pushNamed(context, '/users');
               },
             )
           ],
-        ),
-      ),
-      body: Center(
-        child: ListView.builder(
-          itemCount: expenseList.expenses.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(expenseList.expenses[index].amount.toString()),
-              subtitle: Text(expenseList.expenses[index].paidBy.name),
-            );
-          },
         ),
       ),
     );
