@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:honey_island/expenses/total_amount_of_expenses.dart';
+import 'package:honey_island/expenses/total_amount_of_expenses_per_user.dart';
 
 class ExpenseAnalysisPage extends StatelessWidget {
   const ExpenseAnalysisPage({Key? key}) : super(key: key);
@@ -14,7 +15,8 @@ class ExpenseAnalysisPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: Column(
           children: const <Widget>[
-            TotalAmountOfExpenses()
+            Card(child: Padding(padding: EdgeInsets.all(8), child: TotalAmountOfExpenses())),
+            Card(child: Padding(padding: EdgeInsets.all(8), child: TotalAmountOfExpensesPerUser())),
           ],
         ),
       ),

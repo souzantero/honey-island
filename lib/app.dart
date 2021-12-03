@@ -33,7 +33,7 @@ class App extends StatelessWidget {
           create: (_) => ExpenseList(repository: expenseRepository),
           update: (_, userList, expenseList) {
             if (expenseList == null) throw ArgumentError.notNull('expenseList');
-            expenseList.userList = userList;
+            expenseList.update(userList: userList);
             return expenseList;
           }
         )

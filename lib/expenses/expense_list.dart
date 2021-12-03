@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:flutter/material.dart';
 import 'package:honey_island/expenses/expense.dart';
 import 'package:honey_island/expenses/expense_repository.dart';
+import 'package:honey_island/users/user.dart';
 import 'package:honey_island/users/user_list.dart';
 
 class ExpenseList extends ChangeNotifier {
@@ -16,16 +17,18 @@ class ExpenseList extends ChangeNotifier {
 
   ExpenseList({required this.repository});
 
-  set userList(UserList userList) {
-    _userList = userList;
-    _loadExpenses();
-  }
-
   bool get isLoading => _isLoading;
 
   UnmodifiableListView<Expense> get expenses => UnmodifiableListView(_expenses);
 
   double get totalAmount => _expenses.fold(0.0, (total, expense) => total + expense.amount);
+
+  List<User> get users => _userList.users.where((user) => _expenses.any((expense) => expense.paidBy.id == user.id)).toList();
+
+  void update({ required UserList userList }) {
+    _userList = userList;
+    _loadExpenses();
+  }
 
   Future<void> _loadExpenses() async {
     try {
@@ -52,5 +55,13 @@ class ExpenseList extends ChangeNotifier {
   void addExpense(Expense expense) {
     _expenses.add(expense);
     notifyListeners();
+  }
+
+  double getTotalAmountByUser(User user) {
+    return _expenses.fold(0.0, (total, expense) => total + (expense.paidBy.id == user.id ? expense.amount : 0));
+  }
+
+  double getTotalAmountInPercentageByUser(User user) {
+    return getTotalAmountByUser(user) / totalAmount * 100;
   }
 }
