@@ -12,4 +12,9 @@ class ExpenseList extends ChangeNotifier {
   ExpenseList({required this.repository});
 
   UnmodifiableListView<Expense> get expenses => UnmodifiableListView(_expenses);
+
+  void addExpense(Expense expense) {
+    _expenses.add(expense);
+    notifyListeners();
+  }
 }

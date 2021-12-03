@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:honey_island/expenses/add_expense_page.dart';
 import 'package:honey_island/expenses/expense_list.dart';
 import 'package:honey_island/expenses/expense_repository.dart';
 import 'package:honey_island/guys/guys_list.dart';
@@ -34,9 +35,11 @@ class App extends StatelessWidget {
         title: 'Honey Island',
         theme: ThemeData.dark(),
         initialRoute: '',
+        debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => const HomePage(),
           '/guys': (context) => const GuysPage(),
+          '/expenses/add': (context) => const AddExpensePage(),
         },
       ),
     );

@@ -12,6 +12,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Honey Island'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: () => Navigator.pushNamed(context, '/expenses/add'),
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -37,7 +43,7 @@ class HomePage extends StatelessWidget {
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(expenseList.expenses[index].amount.toString()),
-              subtitle: Text(expenseList.expenses[index].user.name),
+              subtitle: Text(expenseList.expenses[index].paidBy.name),
             );
           },
         ),
