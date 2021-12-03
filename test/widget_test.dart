@@ -7,15 +7,15 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:honey_island/app.dart';
-import 'package:honey_island/expenses/expense_local_storage.dart';
-import 'package:honey_island/guys/guys_local_storage.dart';
+import 'package:honey_island/expenses/expense_store.dart';
+import 'package:honey_island/users/user_store.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const App(
-      guysRepository: GuysLocalStorage(),
-      expenseRepository: ExpenseLocalStorage(),
+      userRepository: UserStore(),
+      expenseRepository: ExpenseStore(),
     ));
   });
 }

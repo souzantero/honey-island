@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:honey_island/expenses/expense.dart';
 import 'package:honey_island/expenses/expense_list.dart';
-import 'package:honey_island/guys/guys_list.dart';
 import 'package:honey_island/users/user.dart';
+import 'package:honey_island/users/user_list.dart';
 import 'package:provider/provider.dart';
 
 class AddExpensePage extends StatefulWidget {
@@ -29,7 +29,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
 
   @override
   Widget build(BuildContext context) {
-    final guysList = context.read<GuysList>();
+    final userList = context.read<UserList>();
     final expenseList = context.read<ExpenseList>();
 
     return Scaffold(
@@ -52,10 +52,10 @@ class _AddExpensePageState extends State<AddExpensePage> {
                     _paidBy = value;
                   });
                 },
-                items: guysList.guys.map((guy) {
+                items: userList.users.map((user) {
                   return DropdownMenuItem<User>(
-                    value: guy,
-                    child: Text(guy.name),
+                    value: user,
+                    child: Text(user.name),
                   );
                 }).toList(),
               ),

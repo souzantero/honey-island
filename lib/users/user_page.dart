@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:honey_island/guys/guys_list.dart';
+import 'package:honey_island/users/user_list.dart';
 import 'package:provider/src/provider.dart';
 
-class GuysPage extends StatelessWidget {
+class UserPage extends StatelessWidget {
 
-  const GuysPage({Key? key}) : super(key: key);
+  const UserPage({Key? key}) : super(key: key);
   
   @override
   Widget build(BuildContext context) {
-    final guysList = context.watch<GuysList>();
+    final userList = context.watch<UserList>();
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Guys'),
+        title: const Text('Users'),
       ),
       body: Center(
         child: ListView.builder(
-          itemCount: guysList.guys.length,
+          itemCount: userList.users.length,
           itemBuilder: (context, index) {
             return ListTile(
-              title: Text(guysList.guys[index].name),
+              title: Text(userList.users[index].name),
             );
           }
         )

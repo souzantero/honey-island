@@ -4,19 +4,19 @@ import 'package:flutter/widgets.dart';
 import 'package:honey_island/expenses/add_expense_page.dart';
 import 'package:honey_island/expenses/expense_list.dart';
 import 'package:honey_island/expenses/expense_repository.dart';
-import 'package:honey_island/guys/guys_list.dart';
-import 'package:honey_island/guys/guys_page.dart';
-import 'package:honey_island/guys/guys_repository.dart';
 import 'package:honey_island/home/home_page.dart';
+import 'package:honey_island/users/user_list.dart';
+import 'package:honey_island/users/user_page.dart';
+import 'package:honey_island/users/user_repository.dart';
 import 'package:provider/provider.dart';
 
 class App extends StatelessWidget {
-  final GuysRepository guysRepository;
+  final UserRepository userRepository;
   final ExpenseRepository expenseRepository;
 
   const App({
     Key? key, 
-    required this.guysRepository,
+    required this.userRepository,
     required this.expenseRepository,
   }) : super(key: key);
 
@@ -24,8 +24,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<GuysList>(
-          create: (_) => GuysList(repository: guysRepository),
+        ChangeNotifierProvider<UserList>(
+          create: (_) => UserList(repository: userRepository),
         ),
         ChangeNotifierProvider<ExpenseList>(
           create: (_) => ExpenseList(repository: expenseRepository),
@@ -38,7 +38,7 @@ class App extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/': (context) => const HomePage(),
-          '/guys': (context) => const GuysPage(),
+          '/users': (context) => const UserPage(),
           '/expenses/add': (context) => const AddExpensePage(),
         },
       ),
