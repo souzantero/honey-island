@@ -23,7 +23,7 @@ class ExpenseList extends ChangeNotifier {
 
   double get totalAmount => _expenses.fold(0.0, (total, expense) => total + expense.amount);
 
-  List<User> get users => _userList.users.where((user) => _expenses.any((expense) => expense.paidBy.id == user.id)).toList();
+  List<User> get payers => _userList.users.where((user) => _expenses.any((expense) => expense.paidBy.id == user.id)).toList();
 
   void update({ required UserList userList }) {
     _userList = userList;

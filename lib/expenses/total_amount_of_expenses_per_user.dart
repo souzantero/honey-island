@@ -14,7 +14,7 @@ class TotalAmountOfExpensesPerUser extends StatelessWidget {
     children.add(const SizedBox(height: 10));
     children.add(const Divider());
     
-    for (var user in expenseList.users) {
+    for (var user in expenseList.payers) {
       children.add(ListTile(
         title: Text(user.name),
         subtitle: Text(expenseList.getTotalAmountInPercentageByUser(user).toPercentage()),
