@@ -17,6 +17,9 @@ class Expense {
     required this.splitWith,
   });
 
+  double get amoutDividedBySplitWith => amount / splitWith.length;
+  String get namesOfSplittersWithoutThePayer => splitWith.where((user) => user != paidBy).map((user) => user.name).join(', ');
+
   factory Expense.create({
     required String description,
     required double amount,

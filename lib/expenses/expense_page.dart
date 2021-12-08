@@ -8,7 +8,7 @@ class ExpensePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Expense'),
+        title: const Text('Expenses'),
         actions: [
           IconButton(
             icon: const Icon(Icons.analytics_outlined),

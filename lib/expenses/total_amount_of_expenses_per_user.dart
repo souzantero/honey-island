@@ -12,6 +12,7 @@ class TotalAmountOfExpensesPerUser extends StatelessWidget {
     final children = <Widget>[];
     children.add(Text('Total Amount Per User', style: Theme.of(context).textTheme.headline6));
     children.add(const SizedBox(height: 10));
+    children.add(const Divider());
     
     for (var user in expenseList.users) {
       children.add(ListTile(
