@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:honey_island/events/widgets/event_list_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -41,6 +42,7 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
+      body: const EventListView()
     );
   }
 }

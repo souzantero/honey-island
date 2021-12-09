@@ -7,7 +7,7 @@ import 'package:honey_island/users/user.dart';
 import 'package:honey_island/users/user_list.dart';
 
 class ExpenseList extends ChangeNotifier {
-  final ExpenseRepository repository;
+  final ExpenseRepository _repository;
 
   final List<Expense> _expenses = [];
 
@@ -15,7 +15,9 @@ class ExpenseList extends ChangeNotifier {
 
   bool _isLoading = false;
 
-  ExpenseList({required this.repository});
+  ExpenseList({
+    required ExpenseRepository repository
+  }) : _repository = repository;
 
   bool get isLoading => _isLoading;
 
@@ -35,7 +37,7 @@ class ExpenseList extends ChangeNotifier {
       _isLoading = true;
       notifyListeners();
 
-      final fetchedExpenses = await repository.getExpenses();
+      final fetchedExpenses = await _repository.getExpenses();
       _expenses.clear();
       _expenses.addAll(fetchedExpenses.map((expenseEntity) {
         return Expense(
