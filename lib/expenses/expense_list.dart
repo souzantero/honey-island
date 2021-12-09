@@ -64,4 +64,8 @@ class ExpenseList extends ChangeNotifier {
   double getTotalAmountInPercentageByUser(User user) {
     return getTotalAmountByUser(user) / totalAmount * 100;
   }
+
+  UnmodifiableListView<Expense> getExpensesByPayerAndSplitter(User payer, User splitter) {
+    return UnmodifiableListView(_expenses.where((expense) => expense.paidBy.id == payer.id && expense.splitWith.contains(splitter)).toList());
+  }
 }

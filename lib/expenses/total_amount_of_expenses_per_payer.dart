@@ -3,14 +3,14 @@ import 'package:honey_island/expenses/expense_list.dart';
 import 'package:honey_island/extensions.dart';
 import 'package:provider/provider.dart';
 
-class TotalAmountOfExpensesPerUser extends StatelessWidget {
-  const TotalAmountOfExpensesPerUser({Key? key}) : super(key: key);
+class TotalAmountOfExpensesPerPayer extends StatelessWidget {
+  const TotalAmountOfExpensesPerPayer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final expenseList = context.watch<ExpenseList>();
     final children = <Widget>[];
-    children.add(Text('Total Amount Per User', style: Theme.of(context).textTheme.headline6));
+    children.add(Text('Total Amount Per Payer', style: Theme.of(context).textTheme.headline6));
     children.add(const SizedBox(height: 10));
     children.add(const Divider());
     

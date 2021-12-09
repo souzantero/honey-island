@@ -19,7 +19,7 @@ class ExpenseStore implements ExpenseRepository {
         payerId: '5',
         description: 'Lenha e carvão',
         amount: 100,
-        splitterIds: ['1', '2', '3', '4', '5,' '6'],
+        splitterIds: ['1', '2', '3', '4', '5', '6'],
       ),
       ExpenseEntity(
         id: '3',
@@ -46,7 +46,7 @@ class ExpenseStore implements ExpenseRepository {
         id: '6',
         payerId: '3',
         description: 'Carnes',
-        amount: 299,
+        amount: 250,
         splitterIds: ['3', '4', '5', '6'],
       ),
       ExpenseEntity(

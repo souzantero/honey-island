@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:honey_island/expenses/amounts_to_be_paid_from_expenses.dart';
+import 'package:honey_island/expenses/amounts_to_pay_and_receive_per_user.dart';
 import 'package:honey_island/expenses/total_amount_of_expenses.dart';
-import 'package:honey_island/expenses/total_amount_of_expenses_per_user.dart';
+import 'package:honey_island/expenses/total_amount_of_expenses_per_payer.dart';
 
 class ExpenseAnalysisPage extends StatelessWidget {
   const ExpenseAnalysisPage({Key? key}) : super(key: key);
@@ -27,11 +28,15 @@ class ExpenseAnalysisPage extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 8, right: 8), 
-                    child: const Card(child: Padding(padding: EdgeInsets.all(8), child: TotalAmountOfExpensesPerUser()))
+                    child: const Card(child: Padding(padding: EdgeInsets.all(8), child: TotalAmountOfExpensesPerPayer()))
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(left: 8, right: 8), 
+                    child: const Card(child: Padding(padding: EdgeInsets.all(8), child: AmountsToBePaidFromExpenses()))
                   ),
                   Container(
                     margin: const EdgeInsets.only(left: 8, right: 8, bottom: 8), 
-                    child: const Card(child: Padding(padding: EdgeInsets.all(8), child: AmountsToBePaidFromExpenses()))
+                    child: const Card(child: Padding(padding: EdgeInsets.all(8), child: AmountsToPayAndReceivePerUser()))
                   ),
                 ],
               ),
