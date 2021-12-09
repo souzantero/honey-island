@@ -1,11 +1,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:honey_island/expenses/add_expense_page.dart';
-import 'package:honey_island/expenses/expense_analysis_page.dart';
-import 'package:honey_island/expenses/expense_list.dart';
-import 'package:honey_island/expenses/expense_page.dart';
-import 'package:honey_island/expenses/expense_repository.dart';
+import 'package:honey_island/expenses/pages/add_expense_page.dart';
+import 'package:honey_island/expenses/pages/expense_analysis_page.dart';
+import 'package:honey_island/expenses/models/expense_list.dart';
+import 'package:honey_island/expenses/pages/expense_page.dart';
+import 'package:honey_island/expenses/repositories/expense_repository.dart';
 import 'package:honey_island/home/home_page.dart';
 import 'package:honey_island/users/user_list.dart';
 import 'package:honey_island/users/user_page.dart';

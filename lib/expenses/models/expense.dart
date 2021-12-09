@@ -1,4 +1,3 @@
-import 'package:honey_island/expenses/expense_entity.dart';
 import 'package:honey_island/users/user.dart';
 import 'package:uuid/uuid.dart';
 

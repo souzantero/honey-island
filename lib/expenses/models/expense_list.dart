@@ -1,8 +1,8 @@
 import 'dart:collection';
 
 import 'package:flutter/material.dart';
-import 'package:honey_island/expenses/expense.dart';
-import 'package:honey_island/expenses/expense_repository.dart';
+import 'package:honey_island/expenses/models/expense.dart';
+import 'package:honey_island/expenses/repositories/expense_repository.dart';
 import 'package:honey_island/users/user.dart';
 import 'package:honey_island/users/user_list.dart';
 

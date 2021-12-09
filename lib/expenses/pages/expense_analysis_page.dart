@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:honey_island/expenses/amounts_to_be_paid_from_expenses.dart';
-import 'package:honey_island/expenses/amounts_to_pay_and_receive_per_user.dart';
-import 'package:honey_island/expenses/total_amount_of_expenses.dart';
-import 'package:honey_island/expenses/total_amount_of_expenses_per_payer.dart';
+import 'package:honey_island/expenses/widgets/amounts_to_be_paid_from_expenses.dart';
+import 'package:honey_island/expenses/widgets/amounts_to_pay_and_receive_per_user.dart';
+import 'package:honey_island/expenses/widgets/total_amount_of_expenses.dart';
+import 'package:honey_island/expenses/widgets/total_amount_of_expenses_per_payer.dart';
 
 class ExpenseAnalysisPage extends StatelessWidget {
   const ExpenseAnalysisPage({Key? key}) : super(key: key);

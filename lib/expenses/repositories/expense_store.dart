@@ -1,5 +1,5 @@
-import 'package:honey_island/expenses/expense_entity.dart';
-import 'package:honey_island/expenses/expense_repository.dart';
+import 'package:honey_island/expenses/repositories/expense_entity.dart';
+import 'package:honey_island/expenses/repositories/expense_repository.dart';
 
 class ExpenseStore implements ExpenseRepository {
   const ExpenseStore();

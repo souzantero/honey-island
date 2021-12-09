@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:honey_island/expenses/expense_list_view.dart';
+import 'package:honey_island/expenses/widgets/expense_list_view.dart';
 
 class ExpensePage extends StatelessWidget {
   const ExpensePage({Key? key}) : super(key: key);

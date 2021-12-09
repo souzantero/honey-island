@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:honey_island/expenses/expense_list.dart';
+import 'package:honey_island/expenses/models/expense_list.dart';
 import 'package:provider/src/provider.dart';
 import 'package:honey_island/extensions.dart';
 

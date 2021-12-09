@@ -7,7 +7,7 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:honey_island/app.dart';
-import 'package:honey_island/expenses/expense_store.dart';
+import 'package:honey_island/expenses/repositories/expense_store.dart';
 import 'package:honey_island/users/user_store.dart';
 
 void main() {

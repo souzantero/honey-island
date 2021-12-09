@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:honey_island/expenses/models/expense_list.dart';
 import 'package:honey_island/extensions.dart';
 import 'package:provider/src/provider.dart';
-
-import 'expense_list.dart';
 
 class ExpenseListView extends StatelessWidget{
   const ExpenseListView({Key? key}) : super(key: key);
